@@ -8,12 +8,11 @@ describe("User Authentication Tests", () => {
     };
 
     beforeEach(async () => {
-        // Reset user storage (only applicable if using an array instead of a database)
+        
         if (global.usersArray) {
             global.usersArray.length = 0;
         }
 
-        // Register a test user before running login tests
         await request(app).post("/users/register").send(testUser);
     });
 
